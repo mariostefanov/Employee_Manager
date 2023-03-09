@@ -1,0 +1,5 @@
+Mario Stefanov|mario.stefanov@gmail.com|0878888888|15/08/2000|1500.0
+Ivan Ivanov|ivan.ivanov@gmail.com|0878888848|15/02/2003|2050.26
+Kameliya Kolchakova|kameliya.kolchakova@gmail.com|0878847848|10/01/2001|4125.45
+Viktor Plamenov|viktor.plamenov@gmail.com|0873895645|30/08/2000|3333.11
+Nikola Ivanov|ivan.ivanov@gmail.com|0885012020|05/05/1998|1980.90

@@ -30,8 +30,16 @@ public class Employee {
     @Column(nullable = false)
     private BigDecimal monthlySalary;
 
-    @OneToMany(mappedBy = "assignee",targetEntity = Task.class)
-    private List<Employee> assignees;
+
+    public Employee(String fullName, String email, String phoneNumber, LocalDate dateOfBirth, BigDecimal monthlySalary) {
+        this.fullName = fullName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.dateOfBirth = dateOfBirth;
+        this.monthlySalary = monthlySalary;
+    }
+
+
     public long getId() {
         return id;
     }
