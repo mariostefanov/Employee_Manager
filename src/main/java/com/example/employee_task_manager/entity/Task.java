@@ -23,6 +23,17 @@ public class Task {
 
     @Column(nullable = false)
     private LocalDate dueDate;
+
+    public Task(String title, String description, Employee assignee, LocalDate dueDate) {
+        this.title = title;
+        this.description = description;
+        this.assignee = assignee;
+        this.dueDate = dueDate;
+    }
+
+    public Task() {
+    }
+
     public long getId() {
         return id;
     }
@@ -56,6 +67,15 @@ public class Task {
 
     public Task setAssignee(Employee assignee) {
         this.assignee = assignee;
+        return this;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public Task setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
         return this;
     }
 }

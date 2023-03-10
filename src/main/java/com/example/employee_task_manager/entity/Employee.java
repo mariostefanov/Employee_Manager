@@ -39,6 +39,8 @@ public class Employee {
         this.monthlySalary = monthlySalary;
     }
 
+    public Employee() {
+    }
 
     public long getId() {
         return id;

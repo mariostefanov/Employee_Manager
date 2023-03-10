@@ -1,0 +1,3 @@
+Send an email.|Email to the new employee|1|15/03/2023
+Fix the bug.|Fix the bug in the application|2|20/03/2023
+Do an interview.|Do an interview with new job candidates|2|20/03/2023
