@@ -46,7 +46,28 @@ public class SeedServiceImpl implements SeedService {
                 .forEach(taskRepository::save);
     }
 
-    private Task getTaskObject(String line) {
+    @Override
+    public void seedFromConsole(String line) {
+        String[] parts = line.split("\\|");
+        //find second "|" index
+        int first = line.indexOf("|");
+        int second = line.indexOf("|", first + 1);
+        switch (parts[1]) {
+            case "Task" -> {
+                //ignore first 2 parts from line
+                Task taskForSeed = getTaskObject(line.substring(second + 1));
+                this.taskRepository.save(taskForSeed);
+            }
+            case "Employee" -> {
+                Employee employeeForSeed = getEmployeeObject(line.substring(second + 1));
+                this.employeeRepository.save(employeeForSeed);
+            }
+        }
+
+
+    }
+
+    public Task getTaskObject(String line) {
         String[] taskParts = line.split("\\|");
         LocalDate dueDate = LocalDate
                 .parse(taskParts[3],DateTimeFormatter.ofPattern("d/M/yyyy"));
@@ -66,6 +87,7 @@ public class SeedServiceImpl implements SeedService {
 
         LocalDate dateOfBirth = LocalDate
                 .parse(employeeParts[3], DateTimeFormatter.ofPattern("d/M/yyyy"));
+        
         BigDecimal salary = new BigDecimal(employeeParts[4]);
 
         return new Employee(employeeParts[0],employeeParts[1],employeeParts[2],dateOfBirth,salary);

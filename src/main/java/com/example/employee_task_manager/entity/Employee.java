@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -30,6 +31,9 @@ public class Employee {
     @Column(nullable = false)
     private BigDecimal monthlySalary;
 
+    @OneToMany(targetEntity = Task.class,mappedBy = "assignee")
+    private List<Task> tasks;
+
 
     public Employee(String fullName, String email, String phoneNumber, LocalDate dateOfBirth, BigDecimal monthlySalary) {
         this.fullName = fullName;
@@ -37,6 +41,7 @@ public class Employee {
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
         this.monthlySalary = monthlySalary;
+        this.tasks = new ArrayList<>();
     }
 
     public Employee() {
@@ -93,6 +98,15 @@ public class Employee {
 
     public Employee setMonthlySalary(BigDecimal monthlySalary) {
         this.monthlySalary = monthlySalary;
+        return this;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public Employee setTasks(List<Task> tasks) {
+        this.tasks = tasks;
         return this;
     }
 }

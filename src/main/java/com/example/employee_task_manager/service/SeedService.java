@@ -5,4 +5,6 @@ import java.io.IOException;
 public interface SeedService {
     void seedEmployees() throws IOException;
     void seedTasks() throws IOException;
+
+    void seedFromConsole(String line);
 }
