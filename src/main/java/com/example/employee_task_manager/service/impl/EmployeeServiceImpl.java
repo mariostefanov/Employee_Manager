@@ -1,10 +1,13 @@
-package com.example.employee_task_manager.service;
+package com.example.employee_task_manager.service.impl;
 
 import com.example.employee_task_manager.entity.Employee;
 import com.example.employee_task_manager.repository.EmployeeRepository;
+import com.example.employee_task_manager.service.EmployeeService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
+
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,4 +29,6 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new EntityNotFoundException("Employee doesn't exist.");
         }
     }
+
+
 }

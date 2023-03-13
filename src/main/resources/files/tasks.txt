@@ -1,3 +1,8 @@
-Send an email.|Email to the new employee|1|15/03/2023
-Fix the bug.|Fix the bug in the application|2|20/03/2023
-Do an interview.|Do an interview with new job candidates|2|20/03/2023
+Send an email.|Email to the new employee|1|10/03/2023
+Fix the bug.|Fix the bug in the application|2|03/03/2023
+Do an interview.|Do an interview with new job candidates|2|11/03/2023
+Do an interview.|Do an interview with new job candidates|2|09/03/2023
+Do something.|Do it|4|12/01/2023
+Clean the office.|Clean all chairs and tables|1|12/04/2023
+Upload the new job offers.|Upload the new job offers.|5|11/03/2023
+Reinstall the computers|Reinstall the computers in the office.|8|11/03/2023

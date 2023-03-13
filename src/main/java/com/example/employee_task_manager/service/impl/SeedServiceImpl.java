@@ -1,9 +1,10 @@
-package com.example.employee_task_manager.service;
+package com.example.employee_task_manager.service.impl;
 
 import com.example.employee_task_manager.entity.Employee;
 import com.example.employee_task_manager.entity.Task;
 import com.example.employee_task_manager.repository.EmployeeRepository;
 import com.example.employee_task_manager.repository.TaskRepository;
+import com.example.employee_task_manager.service.SeedService;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -67,13 +68,19 @@ public class SeedServiceImpl implements SeedService {
 
     }
 
+    @Override
+    public void seedAll() throws IOException {
+        if (this.employeeRepository.count() == 0 && this.taskRepository.count()==0) {
+            this.seedEmployees();
+            this.seedTasks();
+        }
+    }
+
     public Task getTaskObject(String line) {
         String[] taskParts = line.split("\\|");
         LocalDate dueDate = LocalDate
                 .parse(taskParts[3],DateTimeFormatter.ofPattern("d/M/yyyy"));
-        if (dueDate.isBefore(LocalDate.now())){
-            throw new IllegalArgumentException("The due date must be present or future");
-        }
+
         Optional<Employee> taskOpt = employeeRepository.getById(Long.parseLong(taskParts[2]));
         if (employeeRepository.getById(Long.parseLong(taskParts[2])).isPresent()){
             return new Task(taskParts[0],taskParts[1], taskOpt.get(),dueDate);

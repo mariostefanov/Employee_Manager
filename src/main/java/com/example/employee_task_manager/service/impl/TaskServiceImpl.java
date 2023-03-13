@@ -1,7 +1,8 @@
-package com.example.employee_task_manager.service;
+package com.example.employee_task_manager.service.impl;
 
 import com.example.employee_task_manager.entity.Task;
 import com.example.employee_task_manager.repository.TaskRepository;
+import com.example.employee_task_manager.service.TaskService;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -20,7 +21,7 @@ public class TaskServiceImpl implements TaskService {
 
 
     @Override
-    public boolean updateTitle(String[] commandParts) {
+    public void updateDueDate(String[] commandParts) {
         long id = Long.parseLong(commandParts[2]);
         Optional<Task> optTask = this.taskRepository.findById(id);
         if (optTask.isPresent()){
@@ -28,6 +29,5 @@ public class TaskServiceImpl implements TaskService {
         } else {
             throw new EntityNotFoundException("Task doesn't exist.");
         }
-        return false;
     }
 }

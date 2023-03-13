@@ -3,3 +3,6 @@ Ivan Ivanov|ivan.ivanov@gmail.com|0878888848|15/02/2003|2050.26
 Kameliya Kolchakova|kameliya.kolchakova@gmail.com|0878847848|10/01/2001|4125.45
 Viktor Plamenov|viktor.plamenov@gmail.com|0873895645|30/08/2000|3333.11
 Nikola Ivanov|nikola.ivanov@gmail.com|0885012020|05/05/1998|1980.90
+Georgi Petrov|georgi.petrov@mail.bg|0878771988|10/10/2002|5678.90
+Mario Ivanova|mariq.ivanova@mail.bg|0879030230|11/11/2001|1678.90
+Simona Ivailova|simonaa@mail.bg|0879342333|05/09/1999|2272.90

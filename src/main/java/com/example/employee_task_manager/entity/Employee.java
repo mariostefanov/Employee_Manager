@@ -2,6 +2,8 @@ package com.example.employee_task_manager.entity;
 
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.Fetch;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -31,7 +33,7 @@ public class Employee {
     @Column(nullable = false)
     private BigDecimal monthlySalary;
 
-    @OneToMany(targetEntity = Task.class,mappedBy = "assignee")
+    @OneToMany(targetEntity = Task.class,mappedBy = "assignee",fetch = FetchType.EAGER)
     private List<Task> tasks;
 
 
@@ -108,5 +110,10 @@ public class Employee {
     public Employee setTasks(List<Task> tasks) {
         this.tasks = tasks;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return fullName;
     }
 }

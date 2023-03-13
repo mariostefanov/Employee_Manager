@@ -7,4 +7,6 @@ public interface SeedService {
     void seedTasks() throws IOException;
 
     void seedFromConsole(String line);
+
+    void seedAll() throws IOException;
 }
